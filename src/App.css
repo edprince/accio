@@ -58,8 +58,12 @@
   color: orange;
 }
 
+.text-normal {
+  font-size: .8em;
+}
+
 .hljs-number {
-  color: green;
+  color: #3b9e87;
 }
 
 pre{
