@@ -13,10 +13,17 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-container {
   display: flex;
+}
+
+.inner-shadow {
+  box-shadow: inset 10px 0 20px #222222;
+}
+
+.App-header {
+  min-height: 100vh;
+  flex: 1 0 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -24,8 +31,39 @@
   color: white;
 }
 
+.bg-dark {
+  background: #282c34;
+  color: whitesmoke;
+}
+
+.bg-light {
+  background: whitesmoke;
+  color: #282c34;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.font-code {
+  font-family: consolas;
+  font-size: 1em;
+}
+
+.hljs-keyword {
+  color: #b26cff;
+}
+
+.hljs-string {
+  color: orange;
+}
+
+.hljs-number {
+  color: green;
+}
+
+pre{
+  white-space: pre-wrap;
 }
 
 @keyframes App-logo-spin {
