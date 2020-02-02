@@ -46,18 +46,31 @@ function App() {
   return (
     <div className="App max-width-full">
       <div className="flex-container">
-        <div className="App-header bg-white shadow-md pt-10 pb-8 max-w-lg">
+        <div className="App-header flex-col bg-white shadow-md pt-10 pb-8 max-w-lg">
           <div className="px-8">
-            <div className="flex mb-4">
-              <div onClick={() => {setMethod("GET")}} className={"cursor-pointer text-md w-1/2 text-" + (method == "GET" ? "black" : "gray-400")}>GET</div>
-              <div onClick={() => {setMethod("POST")}} className={"cursor-pointer text-md w-1/2 text-" + (method == "POST" ? "black" : "gray-400")}>POST</div>
+            <div className="flex flex-wrap mb-4">
+              <div className="w-full md:w-1/6 md:mb-0">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="method">
+                  Method
+                </label>
+                <select onChange={e => setMethod(e.target.value)} className="text-sm block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 rounded leading-tight focus:outline-none" id="method">
+                  <option value="GET">GET</option>
+                  <option value="POST">POST</option>
+                </select>
+              </div>
+              <div className="w-full md:w-5/6">
+                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="endpoint">
+                  Endpoint (url)
+                </label>
+                <Input updateUrl={(e) => setUrl(e.target.value)} />
+              </div>
             </div>
-            <Input updateUrl={(e) => setUrl(e.target.value)} />
+
             <div className="w-full mb-4">
               <Button click={() => fetch_data(url) }/>
             </div>
           </div>
-          <History updateHistory={(data) => updateView(data)} req={requests} />
+          <History className="" updateHistory={(data) => updateView(data)} req={requests} />
         </div>
         <div className="App-header bg-gray-900 text-left pl-4 font-code max-w-full">
           <Results results={result}/>
