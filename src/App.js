@@ -13,6 +13,9 @@ function App() {
   const [requests, setRequests] = useState([]);
 
   const fetch_data = (url) => {
+    console.log(url);
+    if (url === "") url = "https://api.tvmaze.com/search/shows?q=game";
+    setUrl(url);
     fetch(url, {mode: "cors", method: method}).then(
       function(response) {
         if (response.status !== 200) {
